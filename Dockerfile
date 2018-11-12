@@ -20,4 +20,4 @@ RUN useradd -g 1000 -l -M -s /bin/false -u 1000 docker
 RUN mkdir -p /work
 WORKDIR /work
 
-ENTRYPOINT ["/bin/sh"]
+CMD ["/bin/sh"]
