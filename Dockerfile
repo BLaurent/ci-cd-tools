@@ -8,7 +8,7 @@ RUN locale-gen "en_US.UTF-8"
 RUN dpkg-reconfigure locales
 RUN apt-get install -y -qq curl apt-transport-https
 RUN apt-get install -y -qq \
-      jq python3-pip
+      jq python3-pip iputils-ping
 
 RUN pip3 install httpie
 
