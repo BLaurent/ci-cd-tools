@@ -10,8 +10,8 @@ RUN apt-get install -y -qq curl apt-transport-https
 RUN apt-get install -y -qq \
       jq python3-pip iputils-ping httpie
 
-RUN pip3 install && \
-      panda && \
+RUN pip3 install \
+      pandas \
       numpy
 
 RUN apt-get -y -qq clean && \
