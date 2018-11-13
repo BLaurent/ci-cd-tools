@@ -11,7 +11,7 @@ RUN apt-get install -y -qq \
       jq python3-pip iputils-ping httpie
 
 RUN pip3 install && \
-      pandas && \
+      panda && \
       numpy
 
 RUN apt-get -y -qq clean && \
