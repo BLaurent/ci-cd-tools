@@ -10,7 +10,9 @@ RUN apt-get install -y -qq curl apt-transport-https
 RUN apt-get install -y -qq \
       jq python3-pip iputils-ping
 
-RUN pip3 install httpie
+RUN pip3 install && \
+      httpie && \
+      nbconvert
 
 RUN apt-get -y -qq clean && \
   rm -rf /var/lib/apt/lists/*
