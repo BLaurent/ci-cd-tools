@@ -8,10 +8,9 @@ RUN locale-gen "en_US.UTF-8"
 RUN dpkg-reconfigure locales
 RUN apt-get install -y -qq curl apt-transport-https
 RUN apt-get install -y -qq \
-      jq python3-pip iputils-ping
+      jq python3-pip iputils-ping httpie
 
 RUN pip3 install && \
-      httpie && \
       nbconvert && \
       pandas && \
       numpy
