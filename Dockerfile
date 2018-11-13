@@ -12,7 +12,9 @@ RUN apt-get install -y -qq \
 
 RUN pip3 install && \
       httpie && \
-      nbconvert
+      nbconvert && \
+      pandas && \
+      numpy
 
 RUN apt-get -y -qq clean && \
   rm -rf /var/lib/apt/lists/*
