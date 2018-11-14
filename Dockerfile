@@ -12,6 +12,7 @@ RUN apt-get install -y -qq \
 
 RUN pip3 install \
       pandas \
+      nbconvert \
       numpy
 
 RUN apt-get -y -qq clean && \
