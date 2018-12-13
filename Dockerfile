@@ -15,6 +15,16 @@ RUN pip3 install \
       nbconvert \
       numpy
 
+ENV VEGETA_VERSION 12.1.0
+
+RUN mkdir vegeta && \
+    curl -s -L https://github.com/tsenart/vegeta/releases/download/cli%2Fv$VEGETA_VERSION/vegeta-$VEGETA_VERSION-linux-amd64.tar.gz -o vegeta/vegeta-$VEGETA_VERSION-linux-amd64.tar.gz && \
+    cd vegeta && \
+    tar xvfz vegeta-$VEGETA_VERSION-linux-amd64.tar.gz && \
+    mv vegeta /usr/bin/ && \
+    rm -rf vegeta && \
+    cd -
+
 RUN apt-get -y -qq clean && \
   rm -rf /var/lib/apt/lists/*
 

@@ -11,4 +11,3 @@ add_custom_target(build
 add_custom_target(build-noproxy
   COMMAND docker build --tag=${IMAGE_TAG} .
   WORKING_DIRECTORY ${IMAGE_PATH})
-
