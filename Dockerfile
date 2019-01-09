@@ -15,7 +15,20 @@ RUN pip3 install \
       nbconvert \
       numpy
 
-ENV VEGETA_VERSION 12.1.0
+ENV NVM_DIR /usr/local/nvm # or ~/.nvm , depending
+ENV NODE_VERSION 10.15.0
+ENV NVM_VERSION v0.34.0
+
+# Install nvm with node and npm
+RUN curl https://raw.githubusercontent.com/creationix/nvm/$NVM_VERSION/install.sh | bash \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+RUN npm install -g fs swagger2-postman2-converter
+
+ENV VEGETA_VERSION 12.2.0
 
 RUN mkdir vegeta && \
     curl -s -L https://github.com/tsenart/vegeta/releases/download/cli%2Fv$VEGETA_VERSION/vegeta-$VEGETA_VERSION-linux-amd64.tar.gz -o vegeta/vegeta-$VEGETA_VERSION-linux-amd64.tar.gz && \
