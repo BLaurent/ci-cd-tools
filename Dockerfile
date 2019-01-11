@@ -25,9 +25,8 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/$NVM_VERSION/install.s
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
-    && nvm use default
-
-RUN npm install -g fs swagger2-postman2-converter
+    && nvm use default \
+    && npm install -g fs swagger2-postman2-converter
 
 ENV VEGETA_VERSION 12.2.0
 
