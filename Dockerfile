@@ -15,7 +15,8 @@ RUN pip3 install \
       nbconvert \
       numpy
 
-ENV NVM_DIR /usr/local/nvm # or ~/.nvm , depending
+RUN mkdir -p /work/nvm
+ENV NVM_DIR /work/nvm
 ENV NODE_VERSION 10.15.0
 ENV NVM_VERSION v0.34.0
 
