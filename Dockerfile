@@ -17,7 +17,7 @@ RUN pip3 install \
 
 RUN mkdir -p /work/nvm
 ENV NVM_DIR /work/nvm
-ENV NODE_VERSION 10.15.0
+ENV NODE_VERSION 10.15.1
 ENV NVM_VERSION v0.34.0
 
 # Install nvm with node and npm
