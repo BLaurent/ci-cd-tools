@@ -6,7 +6,7 @@ RUN apt-get -y -qq clean && apt-get -y -qq update
 RUN apt-get install -y -qq locales
 RUN locale-gen "en_US.UTF-8"
 RUN dpkg-reconfigure locales
-RUN apt-get install -y -qq curl apt-transport-https
+RUN apt-get install -y -qq curl wget apt-transport-https
 RUN apt-get install -y -qq \
       jq python3-pip iputils-ping httpie
 
@@ -26,7 +26,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/$NVM_VERSION/install.s
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default \
-    && npm install -g fs jtest babel-cli babel-preset-env supertest superagent 
+    && npm install -g fs jtest babel-cli babel-preset-env supertest superagent
 
 ENV VEGETA_VERSION 12.2.0
 
