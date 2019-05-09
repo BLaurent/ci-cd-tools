@@ -6,7 +6,7 @@ RUN apt-get -y -qq clean && apt-get -y -qq update
 RUN apt-get install -y -qq locales
 RUN locale-gen "en_US.UTF-8"
 RUN dpkg-reconfigure locales
-RUN apt-get install -y -qq curl wget apt-transport-https
+RUN apt-get install -y -qq curl wget apt-transport-https  git-lfs
 RUN apt-get install -y -qq \
       jq python3-pip iputils-ping httpie
 
